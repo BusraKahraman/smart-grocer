@@ -1,15 +1,23 @@
+import { products } from '@/components/data/products';
+import ProductCard from '@/components/ui/ProductCard';
+
 export default function Home() {
 	return (
 		<>
-			<main className='max-w-6xl mx-auto p-6'>
-				<h1 className='text-3xl font-bold mb-2'>
-					Fresh groceries, delivered smartly 🛒
-				</h1>
-				<p className='text-gray-600 mb-6'>
-					Browse quality products and add them to your cart.
-				</p>
-
-				<div className='text-gray-400'>Products coming soon...</div>
+			<main style={{ padding: '16px' }}>
+				<h1>Products</h1>
+				<div
+					style={{
+						display: 'grid',
+						gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+						gap: '16px',
+						marginTop: '16px',
+					}}
+				>
+					{products.map((product) => (
+						<ProductCard key={product.id} product={product} />
+					))}
+				</div>
 			</main>
 		</>
 	);
