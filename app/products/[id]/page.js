@@ -1,4 +1,5 @@
 import { products } from '@/components/data/products';
+import { notFound } from 'next/navigation';
 
 export default async function ProductDetailPage({ params }) {
 	const { id } = await params;
@@ -6,7 +7,7 @@ export default async function ProductDetailPage({ params }) {
 	const product = products.find((p) => String(p.id) === id);
 
 	if (!product) {
-		return <p className='p-6'>Product not found.</p>;
+		notFound();
 	}
 
 	return (
