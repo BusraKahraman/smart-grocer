@@ -1,9 +1,9 @@
 import { products } from '@/components/data/products';
 
-export default function ProductDetailPage({ params }) {
-	const productId = Number(params.id);
+export default async function ProductDetailPage({ params }) {
+	const { id } = await params;
 
-	const product = products.find((p) => p.id === productId);
+	const product = products.find((p) => String(p.id) === id);
 
 	if (!product) {
 		return <p className='p-6'>Product not found.</p>;
