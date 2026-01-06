@@ -1,10 +1,6 @@
-import Navbar from '@/components/layout/Navbar';
-
 export default function Home() {
 	return (
 		<>
-			<Navbar />
-
 			<main className='max-w-6xl mx-auto p-6'>
 				<h1 className='text-3xl font-bold mb-2'>
 					Fresh groceries, delivered smartly 🛒
